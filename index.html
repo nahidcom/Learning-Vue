@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Website 1</title>
+<script type="text/javascript" src="vue.min.js">
+</script>
+
+<style type="text/css">
+   
+  .blog-post{
+  
+    padding:20px;
+  }
+  
+  .blog-post img{
+    display:block;
+   
+    width:480px;
+    height:320px;;
+  
+  }
+
+</style>
+</head>
+<body>
+
+<div id ="App">
+
+  <h3>Hi, {{message}}</h3>
+  <p>You visited this site {{count}} times.</p>
+  <input type="text" v-model="message"  />
+  <br>
+  <button v-on:click="addCount">Click Me</button>
+  <blog></blog>
+  <br>
+  <div>
+    <label for="newColor">Type a color name:</label>
+    <input type="text" v-model="newColor" name="newColor"/>
+    <button v-on:click="addColor">Add color</button>
+    <ul>
+      <li v-for="color in colors">{{color}}</li>
+    </ul>
+  </div>
+
+<script type="text/x-template" id ="blog-template">
+  <div>
+    <h3>Hello</h3>
+    <p3>Welcome to Vue js!</p>
+  </div>
+ 
+</script>
+
+<script type="text/javascript">
+
+  Vue.component("blog",{
+    
+   // template:"#blog-template"
+   template:`
+     <div>
+       <h3>Hello</h3>
+       <p>Welcome to Vue js!</p>
+     </div>
+     `
+  
+  });
+
+  new Vue({
+  
+    el:"#App",
+    data:{
+      colorName:'',
+      message:'John',
+      count:0,
+      newColor:"",
+      colors:["red","blue","green","white"]
+    },
+    
+    methods:{
+    
+      addCount:function(){
+        
+        this.count = this.count+1
+      
+      },
+      
+      addColor:function(){
+        this.colors.push(this.newColor)
+      
+      }
+      
+  
+    
+    }
+    
+    
+    
+ 
+  });
+
+
+</script>
+</body>
+</html>
