@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+
+  #canvas{
+    width:90%;
+    height:200px;
+    background-color:#022;
+    text-align:center;
+    text-color:#fff;
+  }
+
+</style>
+<script src="vue.js"></script>
+</head>
+<body>
+
+<div id ="app">
+<h3>{{message}}</h3>
+</div>
+
+<div id ="canvas">
+
+</div>
+<script type="text/javascript">
+new Vue({
+  el:app,
+  data:{
+    message:"Hello Vue"
+    },
+  methods:{
+  
+    update:function()
+  }
+});
+</script>
+</body>
+</html>
