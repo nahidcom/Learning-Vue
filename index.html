@@ -37,7 +37,7 @@
   <div>
     <label for="newColor">Type a color name:</label><br>
     <input type="text" v-model="newColor" name="newColor"/>
-    <button v-on:click="addColor">Add color</button>
+    <button v-on:click="addColor">Add color</button><br>
     <ul>
       <li v-for="color in colors">{{color}}</li>
     </ul>
